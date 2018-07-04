@@ -3,7 +3,7 @@
 
     Private Const MaxBatchSize As Integer = 100
 
-    Private ReadOnly Property BatchCount As Integer
+    Public ReadOnly Property BatchCount As Integer
 
 
 
