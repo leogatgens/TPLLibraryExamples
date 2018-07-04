@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskTPL-Ccharp", "TaskTPL-Ccharp\TaskTPL-Ccharp.csproj", "{BA59C629-D64B-4D00-A1ED-CA09692604E2}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Logic", "Logic\Logic.vbproj", "{2C7492C6-D92B-48B4-8FA5-7814DC860041}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "TaskTPL-VB", "TaskTPL-VB\TaskTPL-VB.vbproj", "{EC7AA884-E122-4A76-A81B-CE2B19120467}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{BA59C629-D64B-4D00-A1ED-CA09692604E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BA59C629-D64B-4D00-A1ED-CA09692604E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BA59C629-D64B-4D00-A1ED-CA09692604E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BA59C629-D64B-4D00-A1ED-CA09692604E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2C7492C6-D92B-48B4-8FA5-7814DC860041}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C7492C6-D92B-48B4-8FA5-7814DC860041}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C7492C6-D92B-48B4-8FA5-7814DC860041}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C7492C6-D92B-48B4-8FA5-7814DC860041}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC7AA884-E122-4A76-A81B-CE2B19120467}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC7AA884-E122-4A76-A81B-CE2B19120467}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC7AA884-E122-4A76-A81B-CE2B19120467}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC7AA884-E122-4A76-A81B-CE2B19120467}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7F4F77D7-6C58-4D2B-9CA4-6F9DFF773A1A}
+	EndGlobalSection
+EndGlobal
