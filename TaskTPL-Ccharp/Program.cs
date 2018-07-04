@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Logic;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,6 +11,17 @@ namespace TaskTPL_Ccharp
     {
         static void Main(string[] args)
         {
+
+            DataGenerator dataGeneratorLocal = new DataGenerator();
+
+            BatchGenerator batchGeneratorLocal = new BatchGenerator(dataGeneratorLocal.TableOneThousandItems );
+
+            foreach (var batch in batchGeneratorLocal.batches)
+            {
+
+
+            }
+
         }
     }
 }
