@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace TaskTPL_Ccharp
@@ -14,65 +13,58 @@ namespace TaskTPL_Ccharp
 
             DataGenerator dataGeneratorLocal = new DataGenerator();
 
-            BatchGenerator batchGeneratorLocal = new BatchGenerator(dataGeneratorLocal.TableOneThousandItems );
+            BatchGenerator batchesManager = new BatchGenerator(dataGeneratorLocal.TableOneThousandItems );
 
-            foreach (var batch in batchGeneratorLocal.batches)
+            List<Task<List<string>>> tasks = new List<Task<List<string> >>();
+
+
+            for (int i = 0; i < 10; i++)
             {
-                var tasks = new Task<long>[10];
-                for (int ctr = 1; ctr <= 10; ctr++)
-                {
-                    int delayInterval = 18 * ctr;
-                    tasks[ctr - 1] = Task.Run(CalculateSomething(delayInterval));
-                }
-                var continuation = Task.WhenAll(tasks);
-                DoAfterAllFinish(tasks, continuation);
+                List<FormulaCodificada> actualBatch = new List<FormulaCodificada>();
+                
+               actualBatch = batchesManager.batches[i] ;
 
+                tasks.Add(FindAllCatalogs(actualBatch));
             }
 
-        }
-
-        private static void DoAfterAllFinish(Task<long>[] tasks, Task<long[]> continuation)
-        {
             try
             {
-                continuation.Wait();
+                Task.WaitAll(tasks.ToArray());
             }
-            catch (AggregateException)
-            { }
+            // Ignore exceptions here.
+            catch (AggregateException) {
 
-            if (continuation.Status == TaskStatus.RanToCompletion)
+
+            }
+
+            for (int ctr = 0; ctr < tasks.Count; ctr++)
             {
-                long grandTotal = 0;
-                foreach (var result in continuation.Result)
+                if (tasks[ctr].Status == TaskStatus.RanToCompletion)
                 {
-                    grandTotal += result;
-                    Console.WriteLine("Mean: {0:N2}, n = 1,000", result / 1000.0);
+                    
+                    Console.WriteLine(tasks[ctr].Result.Count.ToString());
                 }
+                else
+                    Console.WriteLine("Ocurrio un error");
+            }
 
-                Console.WriteLine("\nMean of Means: {0:N2}, n = 10,000",
-                                  grandTotal / 10000);
-            }
-            // Display information on faulted tasks.
-            else
-            {
-                foreach (var t in tasks)
-                    Console.WriteLine("Task {0}: {1}", t.Id, t.Status);
-            }
+
+
+
+
+
+
         }
 
-        private static Func<Task<long>> CalculateSomething(int delayInterval)
-        {
-            return async () =>
-            {
-                long total = 0;
-                await Task.Delay(delayInterval);
-                var rnd = new Random();
-                // Generate 1,000 random numbers.
-                for (int n = 1; n <= 1000; n++)
-                    total += rnd.Next(0, 1000);
+        private static Task<List<string>> FindAllCatalogs(List<FormulaCodificada> codeInBatchList)
+        {      
+            return Task.Run(() => {
+                List<string> result = new List<string>();
 
-                return total;
-            };
+
+                result = codeInBatchList.Select(x => x.Codigo1.Substring(0, 2)).Distinct().ToList();
+                return result;
+            });
         }
     }
 }

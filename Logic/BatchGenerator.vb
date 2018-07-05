@@ -26,6 +26,7 @@
         For index = 0 To BatchCount - 1
             Dim skipSize As Integer = CalculateSkip(index)
             Dim tempList = bigData.Skip(skipSize).Take(MaxBatchSize).ToList()
+
             batches.Add(tempList)
         Next
 

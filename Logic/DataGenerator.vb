@@ -19,16 +19,16 @@
                     .IdFormulaCodificada = index,
                     .Descripcion = "Descripcin Prueba",
                     .Celda = String.Concat("A", index.ToString),
-                    .Codigo1 = String.Concat("Codigo", index.ToString),
-                    .Codigo2 = String.Concat("Codigo", index.ToString),
-                    .Codigo3 = String.Concat("Codigo", index.ToString),
-                    .Codigo4 = String.Concat("Codigo", index.ToString),
-                    .Codigo5 = String.Concat("Codigo", index.ToString),
-                    .Codigo6 = String.Concat("Codigo", index.ToString),
-                    .Codigo7 = String.Concat("Codigo", index.ToString),
-                    .Codigo8 = String.Concat("Codigo", index.ToString),
-                    .Codigo9 = String.Concat("Codigo", index.ToString),
-                    .Codigo10 = String.Concat("Codigo", index.ToString)
+                    .Codigo1 = String.Concat("AB_Codigo", index.ToString),
+                    .Codigo2 = String.Concat("CD_Codigo", index.ToString),
+                    .Codigo3 = String.Concat("EF_Codigo", index.ToString),
+                    .Codigo4 = String.Concat("HI_Codigo", index.ToString),
+                    .Codigo5 = String.Concat("KL_Codigo", index.ToString),
+                    .Codigo6 = String.Concat("TT_Codigo", index.ToString),
+                    .Codigo7 = String.Concat("LK_Codigo", index.ToString),
+                    .Codigo8 = String.Concat("PO_Codigo", index.ToString),
+                    .Codigo9 = String.Concat("WE_Codigo", index.ToString),
+                    .Codigo10 = String.Concat("QW_Codigo", index.ToString)
                 }
 
                 Formulas.Add(nuevoFormulaCodificada)
