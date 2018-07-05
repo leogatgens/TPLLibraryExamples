@@ -50,7 +50,7 @@ namespace TaskTPL_Ccharp
 
 
 
-
+            Console.ReadKey();
 
 
 
@@ -61,9 +61,15 @@ namespace TaskTPL_Ccharp
             return Task.Run(() => {
                 List<string> result = new List<string>();
 
+                var quantity = codeInBatchList[0].Codes.Count - 1;
 
-                result = codeInBatchList.Select(x => x.Codigo1.Substring(0, 2)).Distinct().ToList();
-                return result;
+                for (int index = 0; index < quantity; index++)
+                {
+
+                    var tempValue = codeInBatchList.Select(x => x.Codes[index].Substring(0, 2)).Distinct().ToList();
+                    result.AddRange(tempValue);
+                }
+                return result.Distinct().ToList();
             });
         }
     }
