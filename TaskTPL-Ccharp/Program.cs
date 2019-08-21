@@ -11,10 +11,14 @@ namespace TaskTPL_Ccharp
         static void Main(string[] args)
         {
 
+            //Genera los datos
             DataGenerator dataGeneratorLocal = new DataGenerator();
 
-            BatchGenerator batchesManager = new BatchGenerator(dataGeneratorLocal.TableOneThousandItems );
+            //Genera lotes
+            BatchGenerator batchesManager = new BatchGenerator(dataGeneratorLocal);
 
+
+            ///Genera los task
             List<Task<List<string>>> tasks = new List<Task<List<string> >>();
 
 

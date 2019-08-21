@@ -1,4 +1,5 @@
 ﻿Public Class DataGenerator
+    Implements IDataGenerator
     Dim dt As DataTable
 
     Sub New()
@@ -11,10 +12,10 @@
 
     End Sub
 
-    Public ReadOnly Property TableOneThousandItems As List(Of FormulaCodificada)
+    Public ReadOnly Property GenerarTablaConMilRegistros As List(Of FormulaCodificada) Implements IDataGenerator.GenerarTablaConMilRegistros
         Get
             Dim Formulas As New List(Of FormulaCodificada)
-            For index = 1 To 1000
+            For index = 1 To 1000010
                 Dim columnsCodes As List(Of String) = New List(Of String)
 
                 columnsCodes.Add(String.Concat("AB_Codigo", index.ToString))
@@ -46,5 +47,7 @@
             Return Formulas
         End Get
     End Property
+
+
 End Class
 

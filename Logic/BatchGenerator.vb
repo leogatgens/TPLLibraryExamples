@@ -12,7 +12,9 @@
 
 
 
-    Public Sub New(ByVal bigData As List(Of FormulaCodificada))
+    Public Sub New(ByVal generadorDAtos As IDataGenerator)
+
+        Dim bigData = generadorDAtos.GenerarTablaConMilRegistros()
         BatchCount = bigData.Count / MaxBatchSize
         batches = GenerateBatches(bigData)
 
