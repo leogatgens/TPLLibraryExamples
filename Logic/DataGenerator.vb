@@ -15,7 +15,7 @@
     Public ReadOnly Property GenerarTablaConMilRegistros As List(Of FormulaCodificada) Implements IDataGenerator.GenerarTablaConMilRegistros
         Get
             Dim Formulas As New List(Of FormulaCodificada)
-            For index = 1 To 1000010
+            For index = 1 To 300010
                 Dim columnsCodes As List(Of String) = New List(Of String)
 
                 columnsCodes.Add(String.Concat("AB_Codigo", index.ToString))
